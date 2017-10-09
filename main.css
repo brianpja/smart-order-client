@@ -34,3 +34,21 @@ main {
   padding-left: 5px;
   background-color: #D2D2D2;
 }
+
+.content {
+  flex: 0 0 auto;
+
+  position: relative;
+}
+
+.row {
+  margin: 20px;
+}
+
+.wide {
+  width: 100%;
+}
+
+::selection {
+background:transparent;
+}

@@ -1,0 +1,14 @@
+<div class="content bg-white">
+  <h1>Items</h1>
+  <div class="row" ng-repeat="item in $ctrl.items | orderBy: 'name'">
+
+      <div class="fl w-50">{{item.name}}</div>
+      <div class="fl w-10">{{item.price}}</div>
+      <select class="fl w-10" name="Qty">
+        <option selected disabled>Qty</option>
+        <option value="1">1</option>
+      </select>
+      <button class="fl w-20">Add to Order</button>
+
+  </div>
+</div>

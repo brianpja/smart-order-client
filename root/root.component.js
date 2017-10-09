@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('app')
-    .component('checkout', {
+    .component('root', {
       controller,
-      templateUrl: "checkout-template.html"
+      templateUrl: "root/root-template.html"
 
     })
 

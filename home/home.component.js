@@ -4,7 +4,7 @@
   angular.module('app')
     .component('home', {
       controller,
-      templateUrl: "home-template.html"
+      templateUrl: "home/home-template.html"
 
     })
 

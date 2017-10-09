@@ -1,10 +1,10 @@
 (function() {
   'use strict';
-console.log('1')
+
   angular.module('app')
-    .component('root', {
+    .component('checkout', {
       controller,
-      templateUrl: "root-template.html"
+      templateUrl: "checkout/checkout-template.html"
 
     })
 
@@ -15,7 +15,7 @@ console.log('1')
       vm.items = [];
 
       vm.$onInit = function() {
-        console.log('2')
+
       }
 
 
