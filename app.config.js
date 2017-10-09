@@ -9,9 +9,21 @@
 
     $stateProvider
       .state({
+        name: 'root',
+        component: 'root',
+        abstract: true
+      })
+      .state({
         name: 'home',
         url: '',
-        component: 'home'
+        component: 'home',
+        parent: 'root'
+      })
+      .state({
+        name: 'checkout',
+        url: '/checkout',
+        component: 'checkout',
+        parent: 'root'
       })
   }
 
