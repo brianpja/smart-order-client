@@ -25,9 +25,8 @@
       }
 
       vm.getItems = function() {
-        $http.get('http://localhost:8000/items')
+        orderService.getItems()
           .then((response) => {
-            console.log(response.data)
             vm.items = response.data.map(ele => {
               ele.qty = "Qty";
               return ele;
@@ -37,8 +36,6 @@
 
       vm.addItem = function(item) {
         vm.currentOrder.push(item);
-        console.log(vm.currentOrder);
-
       }
     }
 }());

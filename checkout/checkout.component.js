@@ -37,10 +37,10 @@
       }
 
       vm.submitOrder = function(order) {
-        console.log('working')
-        $http.post('http://localhost:8000/orders', $ctrl.currentOrder)
-          .then(() => {
-            $ctrl.currentOrder = [];
+        orderService.postOrder(order)
+          .then((response) => {
+            console.log(response);
+            vm.currentOrder = [];
           })
       }
 

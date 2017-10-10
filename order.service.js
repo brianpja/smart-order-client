@@ -7,10 +7,20 @@
     service.$inject = ['$http']
     function service($http) {
 
-      this.currentOrder = [];
+      const url = 'http://localhost:8000';
 
-      this.addToOrder = function(item) {
-        this.currentOrder.push(item);
+      this.postOrder = function(order) {
+        return $http.post(`${url}/orders`, order)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.getItems = function() {
+        return $http.get(`${url}/items`)
+          .then(function(response) {
+            return response;
+          })
       }
 
     }
