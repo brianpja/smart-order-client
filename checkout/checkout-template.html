@@ -1,25 +1,30 @@
 <h1>Your Order</h1>
 
-<div class="wrapper">
-<table>
-  <tr class="striped--moon-gray">
-    <th>Item</th>
-    <th>Qty</th>
-    <th>Unit price</th>
-    <th>Total</th>
+<div class="wrapper f1" ng-if="!$ctrl.currentOrder.length">Your order is empty</div>
 
-  </tr>
-  <tr class="striped--moon-gray">
-    <td>Alphabet Vodka</td>
-    <td>2</td>
-    <td>29.00</td>
-    <td>58.00</td>
-  </tr>
-  <tr class="striped--moon-gray">
-    <td>2bar Bourbon</td>
-    <td>1</td>
-    <td>30.00</td>
-    <td>30.00</td>
-  </tr>
-</table>
+<div class="wrapper" ng-if="$ctrl.currentOrder.length">
+
+  <div class="row">
+    <div class="fl w-40">Item</div>
+    <div class="fl w-10">Qty</div>
+    <div class="fl w-20">Price</div>
+    <div class="fl w-20">Total</div>
+    <div class="fl w-10"></div>
+  </div>
+
+  <div class="row" ng-repeat="item in $ctrl.currentOrder">
+    <div class="fl w-40">{{item.name}}</div>
+    <div class="fl w-10">{{item.qty}}</div>
+    <div class="fl w-20">${{item.price}}</div>
+    <div class="fl w-20">${{item.price * item.qty | number: 2}}</div>
+    <button class="fl w-10" ng-click="$ctrl.removeFromOrder($index)">delete</button>
+  </div>
+
+  <div class="row">
+    <div class="fl w-70 bt">Total</div>
+    <div class="fl w-20 bt">${{$ctrl.total | number: 2}}</div>
+  </div>
+
+  <button class="center" ng-click="$ctrl.submitOrder($ctrl.currentOrder)">Confirm your Order</button>
+
 </div>

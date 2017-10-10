@@ -1,14 +1,26 @@
 <div class="content bg-white">
   <h1>Items</h1>
   <div class="row" ng-repeat="item in $ctrl.items | orderBy: 'name'">
+    <div class="fl w-50">{{item.name}}</div>
+    <div class="fl w-10">{{item.price}}</div>
 
-      <div class="fl w-50">{{item.name}}</div>
-      <div class="fl w-10">{{item.price}}</div>
-      <select class="fl w-10" name="Qty">
-        <option selected disabled>Qty</option>
+    <form novalidate name="addForm" ng-submit="$ctrl.addItem(item)">
+      <select class="fl w-10"
+      ng-model="item.qty"
+      required>
+        <option value="Qty">Qty</option>
         <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
       </select>
-      <button class="fl w-20">Add to Order</button>
-
+      <button type="submit" class="fl w-20" ng-disabled="addForm.$invalid || item.qty === 'Qty'">Add to Order</button>
+    </form>
   </div>
 </div>

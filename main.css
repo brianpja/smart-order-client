@@ -50,5 +50,10 @@ main {
 }
 
 ::selection {
-background:transparent;
+  background: white;
+}
+
+.wrapper {
+  width: 90%;
+  margin: auto;
 }
