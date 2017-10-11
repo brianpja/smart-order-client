@@ -2,14 +2,14 @@
   'use strict';
 
   angular.module('app')
-    .component('login', {
+    .component('distributors', {
       controller,
       bindings: {
         currentOrder: '=',
         showHome: '=',
         showCheckout: '='
       },
-      templateUrl: "login/login-template.html"
+      templateUrl: "distributors/distributors-template.html"
 
     })
 

@@ -7,18 +7,40 @@
     <nav class="bg-moon-gray sidebar">
       <h3><a ng-click="$ctrl.goHome()">Home</a></h3>
       <h3><a ng-click="$ctrl.goCheckout()">Checkout</a></h3>
+      <h3><a ng-click="$ctrl.goDist()">Distributors</a></h3>
+      <h3><a ng-click="$ctrl.goOrders()">Order Log</a></h3>
     </nav>
     <home
     ng-if="$ctrl.showHome"
     class="wide"
     current-order="$ctrl.currentOrder"
     show-home="$ctrl.showHome"
-    show-checkout="$ctrl.showCheckout"></home>
+    show-checkout="$ctrl.showCheckout"
+    show-dist="$ctrl.showDist"
+    show-orders="$ctrl.showOrders"></home>
     <checkout
     ng-if="$ctrl.showCheckout"
     class="wide"
     current-order="$ctrl.currentOrder"
     show-home="$ctrl.showHome"
-    show-checkout="$ctrl.showCheckout"></checkout>
+    show-checkout="$ctrl.showCheckout"
+    show-dist="$ctrl.showDist"
+    show-orders="$ctrl.showOrders"></checkout>
+    <distributors
+    ng-if="$ctrl.showDist"
+    class="wide"
+    current-order="$ctrl.currentOrder"
+    show-home="$ctrl.showHome"
+    show-checkout="$ctrl.showCheckout"
+    show-dist="$ctrl.showDist"
+    show-orders="$ctrl.showOrders"></distributors>
+    <orders
+    ng-if="$ctrl.showOrders"
+    class="wide"
+    current-order="$ctrl.currentOrder"
+    show-home="$ctrl.showHome"
+    show-checkout="$ctrl.showCheckout"
+    show-dist="$ctrl.showDist"
+    show-orders="$ctrl.showOrders"></orders>
   </main>
 </div>
