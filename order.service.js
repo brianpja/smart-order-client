@@ -7,8 +7,9 @@
     service.$inject = ['$http']
     function service($http) {
 
-      // const url = 'http://localhost:8000';
-      const url = 'https://brianpja-smart-order-server.herokuapp.com';
+      const url = 'http://localhost:8000';
+      // git push heroku master
+      // const url = 'https://brianpja-smart-order-server.herokuapp.com';
 
       this.postOrder = function(order) {
         return $http.post(`${url}/orders`, order)
@@ -19,6 +20,27 @@
 
       this.getItems = function() {
         return $http.get(`${url}/items`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.getDist = function() {
+        return $http.get(`${url}/distributors`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.addDist = function(obj) {
+        return $http.post(`${url}/distributors`, obj)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.deleteDist = function(id) {
+        return $http.delete(`${url}/distributors/${id}`)
           .then(function(response) {
             return response;
           })

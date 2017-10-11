@@ -35,7 +35,7 @@
           })
       }
 
-      vm.addItem = function(item) {
+      vm.addItemToOrder = function(item) {
         vm.currentOrder.push(item);
       }
     }

@@ -1,10 +1,10 @@
 <div class="content bg-white">
-  <h1>Items</h1>
+  <h1>Available Items</h1>
   <div class="row" ng-repeat="item in $ctrl.items | orderBy: 'name'">
     <div class="fl w-50">{{item.name}}</div>
     <div class="fl w-10">{{item.price}}</div>
 
-    <form novalidate name="addForm" ng-submit="$ctrl.addItem(item)">
+    <form novalidate name="addForm" ng-submit="$ctrl.addItemToOrder(item)">
       <select class="fl w-10"
       ng-model="item.qty"
       required>
