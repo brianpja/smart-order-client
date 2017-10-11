@@ -27,6 +27,7 @@
       vm.getItems = function() {
         orderService.getItems()
           .then((response) => {
+            console.log('coming back')
             vm.items = response.data.map(ele => {
               ele.qty = "Qty";
               return ele;

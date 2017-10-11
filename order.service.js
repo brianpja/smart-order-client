@@ -7,7 +7,8 @@
     service.$inject = ['$http']
     function service($http) {
 
-      const url = 'http://localhost:8000';
+      // const url = 'http://localhost:8000';
+      const url = 'https://brianpja-smart-order-server.herokuapp.com';
 
       this.postOrder = function(order) {
         return $http.post(`${url}/orders`, order)
