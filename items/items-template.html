@@ -1,2 +1,17 @@
 <h1>{{$ctrl.detail[0].distributor}}</h1>
-<p>{{$ctrl.detail}}</p>
+<p>Contact: {{$ctrl.detail[0].contact}}</p>
+<p>Email: {{$ctrl.detail[0].email}}</p>
+
+<button>Edit Info</button>
+
+<p>Available Items</p>
+<div class="wrapper" ng-repeat="item in $ctrl.detail">
+  <div class="fl w-50">{{item.item}}</div>
+  <div class="fl w-10">{{item.price}}</div>
+</div>
+
+<p>Add new item</p>
+<form>
+  <input placeholder>
+
+<!-- <p>{{$ctrl.detail}}</p> -->
