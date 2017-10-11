@@ -18,15 +18,16 @@
       const vm = this;
 
       vm.list = [];
+      vm.detail = [];
 
       vm.$onInit = function() {
+        vm.showDetail = false;
         vm.getDistributors();
       }
 
       vm.getDistributors = function() {
         orderService.getDist()
           .then(function(response) {
-            console.log(response);
             vm.list = response.data;
           })
       }
@@ -45,6 +46,19 @@
           .then(function(response) {
             console.log(response)
             vm.getDistributors();
+          })
+      }
+
+      vm.goDetail = function(dist){
+        vm.showDetail = true;
+        vm.getDetail(dist);
+      }
+
+      vm.getDetail = function(dist) {
+        orderService.getDetail(dist)
+          .then(function(response) {
+            console.log(response);
+            vm.detail = response.data;
           })
       }
 

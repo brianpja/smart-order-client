@@ -7,7 +7,8 @@
       bindings: {
         currentOrder: '=',
         showHome: '=',
-        showCheckout: '='
+        showCheckout: '=',
+        detail: '='
       },
       templateUrl: "items/items-template.html"
 
@@ -19,7 +20,7 @@
 
 
       vm.$onInit = function() {
-
+        console.log('items detail:', vm.detail);
       }
 
     }

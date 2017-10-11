@@ -46,5 +46,12 @@
           })
       }
 
+      this.getDetail = function(obj) {
+        return $http.get(`${url}/distributors/${obj.id}/items`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
     }
 }());
