@@ -6,7 +6,7 @@
   <main>
     <nav class="bg-moon-gray sidebar">
       <h3><a ng-click="$ctrl.goHome()">Home</a></h3>
-      <h3><a ng-click="$ctrl.goCheckout()">Checkout</a></h3>
+      <h3><a ng-click="$ctrl.goCheckout()">Checkout ({{ $ctrl.currentOrder.length }})</a></h3>
       <h3><a ng-click="$ctrl.goDist()">Distributors</a></h3>
       <h3><a ng-click="$ctrl.goOrders()">Order Log</a></h3>
     </nav>

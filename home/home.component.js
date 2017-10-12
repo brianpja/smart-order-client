@@ -36,6 +36,7 @@
       }
 
       vm.addItemToOrder = function(item) {
+        console.log(item);
         vm.currentOrder.push(item);
       }
     }

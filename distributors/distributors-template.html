@@ -1,22 +1,22 @@
 <div ng-if="!$ctrl.showDetail">
 
 <h1>Distributors</h1>
-
+<div class="wrapper">
 <div class="row" ng-repeat="dist in $ctrl.list | orderBy: 'name'">
   <div class="fl w-40"><a ng-click="$ctrl.goDetail(dist)">{{dist.name}}</a></div>
-  <div class="fl w-10">{{dist.contact}}</div>
+  <div class="fl w-20">{{dist.contact}}</div>
   <div class="fl w-30">{{dist.email}}</div>
-  <button class="fl w-10">edit</button>
   <button class="fl w-10" ng-click="$ctrl.deleteDist(dist)">delete</button>
 </div>
 
-<p>Add a new distributor</p>
+<p class="add-dist">Add a new distributor:</p>
 <form ng-submit="$ctrl.addDist()">
   <input placeholder="Distributor" ng-model="$ctrl.newDist.name"></input>
   <input placeholder="Contact Name" ng-model="$ctrl.newDist.contact"></input>
   <input placeholder="Email" ng-model="$ctrl.newDist.email"></input>
   <button type="submit">Submit</button>
 </form>
+</div>
 </div>
 
 <items ng-if="$ctrl.showDetail" detail="$ctrl.detail"></items>

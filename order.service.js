@@ -72,6 +72,12 @@
           })
       }
 
+      this.getOrders = function() {
+        return $http.get(`${url}/orders`)
+          .then(function(response) {
+            return response;
+          })
+      }
 
     }
 }());
