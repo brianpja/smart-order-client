@@ -6,6 +6,7 @@
       controller,
       bindings: {
         detail: '=',
+        distributor: '='
       },
       templateUrl: "items/items-template.html"
 
@@ -16,16 +17,17 @@
       const vm = this;
 
       vm.$onInit = function() {
-
+        vm.form = false;
+        console.log(vm.distributor)
       }
 
       vm.addItem = function(item) {
-        item.distributor_id = vm.detail[0].dist_id;
+        item.distributor_id = vm.distributor.id;
 
         orderService.addItem(item)
           .then(function(response) {
             console.log(response)
-            const idObj = {id: vm.detail[0].dist_id}
+            const idObj = {id: vm.distributor.id}
             vm.refreshList(idObj);
             delete vm.newItem;
           })
@@ -45,6 +47,10 @@
             const idObj = {id: vm.detail[0].dist_id}
             vm.refreshList(idObj);
           })
+      }
+
+      vm.showForm = function() {
+        vm.form = !vm.form;
       }
     }
 }());

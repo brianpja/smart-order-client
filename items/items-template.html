@@ -1,8 +1,14 @@
-<h1>{{$ctrl.detail[0].distributor}}</h1>
-<p>Contact: {{$ctrl.detail[0].contact}}</p>
-<p>Email: {{$ctrl.detail[0].email}}</p>
+<h1>{{$ctrl.distributor.name}}</h1>
+<p>Contact: {{$ctrl.distributor.contact}}</p>
+<p>Email: {{$ctrl.distributor.email}}</p>
 
-<button>Edit Info</button>
+<button ng-click="$ctrl.showForm()">Edit Info</button>
+<form ng-if="$ctrl.form" ng-submit="">
+  <input placeholder="Distributor" ng-model="$ctrl.editDist.name"></input>
+  <input placeholder="Contact Name" ng-model="$ctrl.editDist.contact"></input>
+  <input placeholder="Email" ng-model="$ctrl.editDist.email"></input>
+  <button type="submit">Submit</button>
+</form>
 
 <p>Available Items</p>
 <div class="wrapper cf" ng-repeat="item in $ctrl.detail">

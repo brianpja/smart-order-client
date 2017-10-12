@@ -50,6 +50,7 @@
 
       vm.goDetail = function(dist){
         vm.showDetail = true;
+        vm.distributor = dist;
         vm.getDetail(dist);
       }
 
