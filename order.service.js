@@ -11,6 +11,8 @@
       // git push heroku master
       // const url = 'https://brianpja-smart-order-server.herokuapp.com';
 
+      this.showDetail = false;
+
       this.postOrder = function(order) {
         return $http.post(`${url}/orders`, order)
           .then(function(response) {
@@ -69,6 +71,7 @@
             return response;
           })
       }
+
 
     }
 }());

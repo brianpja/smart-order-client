@@ -13,35 +13,20 @@
     <home
     ng-if="$ctrl.showHome"
     class="wide"
-    current-order="$ctrl.currentOrder"
-    show-home="$ctrl.showHome"
-    show-checkout="$ctrl.showCheckout"
-    show-dist="$ctrl.showDist"
-    show-orders="$ctrl.showOrders"></home>
+    current-order="$ctrl.currentOrder"></home>
     <checkout
     ng-if="$ctrl.showCheckout"
     class="wide"
-    current-order="$ctrl.currentOrder"
-    show-home="$ctrl.showHome"
-    show-checkout="$ctrl.showCheckout"
-    show-dist="$ctrl.showDist"
-    show-orders="$ctrl.showOrders"></checkout>
+    current-order="$ctrl.currentOrder"></checkout>
     <distributors
     ng-if="$ctrl.showDist"
     class="wide"
     current-order="$ctrl.currentOrder"
-    show-home="$ctrl.showHome"
-    show-checkout="$ctrl.showCheckout"
-    show-dist="$ctrl.showDist"
-    show-orders="$ctrl.showOrders"></distributors>
+    show-detail="$ctrl.showDetail"></distributors>
     <orders
     ng-if="$ctrl.showOrders"
     class="wide"
-    current-order="$ctrl.currentOrder"
-    show-home="$ctrl.showHome"
-    show-checkout="$ctrl.showCheckout"
-    show-dist="$ctrl.showDist"
-    show-orders="$ctrl.showOrders"></orders>
+    current-order="$ctrl.currentOrder"></orders>
 
   </main>
 </div>

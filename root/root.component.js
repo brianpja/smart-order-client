@@ -8,8 +8,8 @@
 
     })
 
-    controller.$inject = ['$state', '$http']
-    function controller($state, $http) {
+    controller.$inject = ['$state', '$http', 'orderService']
+    function controller($state, $http, orderService) {
       const vm = this;
 
       vm.items = [];
@@ -20,6 +20,7 @@
         vm.showCheckout = false;
         vm.showDist = false;
         vm.showOrders = false;
+        vm.showDetail = false;
       }
 
       vm.goHome = function() {
@@ -27,6 +28,7 @@
         vm.showCheckout = false;
         vm.showDist = false;
         vm.showOrders = false;
+        vm.showDetail = false;
       }
 
       vm.goCheckout = function() {
@@ -34,6 +36,7 @@
         vm.showCheckout = true;
         vm.showDist = false;
         vm.showOrders = false;
+        vm.showDetail = false;
       }
 
       vm.goDist = function() {
@@ -41,6 +44,7 @@
         vm.showCheckout = false;
         vm.showDist = true;
         vm.showOrders = false;
+        vm.showDetail = false;
       }
 
       vm.goOrders = function() {
@@ -48,6 +52,7 @@
         vm.showCheckout = false;
         vm.showDist = false;
         vm.showOrders = true;
+        vm.showDetail = false;
       }
 
     }

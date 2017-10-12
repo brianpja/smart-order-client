@@ -6,8 +6,7 @@
       controller,
       bindings: {
         currentOrder: '=',
-        showHome: '=',
-        showCheckout: '='
+        showDetail: '='
       },
       templateUrl: "distributors/distributors-template.html"
 
