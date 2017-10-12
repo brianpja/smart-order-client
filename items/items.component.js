@@ -51,6 +51,16 @@
 
       vm.showForm = function() {
         vm.form = !vm.form;
+        vm.editDist = Object.assign({}, vm.distributor);
+      }
+
+      vm.updateDist = function(obj) {
+        orderService.updateDist(obj)
+          .then(function(response) {
+            console.log(response);
+            vm.distributor = response.data;
+            vm.showForm();
+          })
       }
     }
 }());

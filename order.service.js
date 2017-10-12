@@ -79,5 +79,12 @@
           })
       }
 
+      this.updateDist = function(obj) {
+        return $http.patch(`${url}/distributors/${obj.id}`, obj)
+          .then(function(response) {
+            return response;
+          })
+      }
+
     }
 }());

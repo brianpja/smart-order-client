@@ -3,7 +3,7 @@
 <p>Email: {{$ctrl.distributor.email}}</p>
 
 <button ng-click="$ctrl.showForm()">Edit Info</button>
-<form ng-if="$ctrl.form" ng-submit="">
+<form ng-if="$ctrl.form" ng-submit="$ctrl.updateDist($ctrl.editDist)">
   <input placeholder="Distributor" ng-model="$ctrl.editDist.name"></input>
   <input placeholder="Contact Name" ng-model="$ctrl.editDist.contact"></input>
   <input placeholder="Email" ng-model="$ctrl.editDist.email"></input>
