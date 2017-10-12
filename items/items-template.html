@@ -7,8 +7,9 @@
 <p>Available Items</p>
 <div class="wrapper cf" ng-repeat="item in $ctrl.detail">
   <div class="fl w-50">{{item.item}}</div>
-  <div class="fl w-30">{{item.price}}</div>
-  <div class="fl w-20" ng-click="$ctrl.deleteItem(item)">Delete</div>
+  <div class="fl w-10">{{item.price}}</div>
+  <button class="fl w-10" ng-click="$ctrl.deleteItem(item)">Delete</button>
+  <div class="fl w-30"></div>
 </div>
 
 <div class="wrapper mv3">

@@ -63,5 +63,12 @@
           })
       }
 
+      this.deleteItem = function(obj) {
+        return $http.delete(`${url}/items/${obj.id}`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
     }
 }());

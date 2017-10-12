@@ -15,8 +15,6 @@
     function controller($state, $http, orderService) {
       const vm = this;
 
-
-
       vm.$onInit = function() {
 
       }
@@ -37,6 +35,15 @@
         orderService.getDetail(obj)
           .then(function(response) {
             vm.detail = response.data;
+          })
+      }
+
+      vm.deleteItem = function(item) {
+        orderService.deleteItem(item)
+          .then(function(response) {
+            console.log(response)
+            const idObj = {id: vm.detail[0].dist_id}
+            vm.refreshList(idObj);
           })
       }
     }
