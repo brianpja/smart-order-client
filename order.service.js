@@ -47,7 +47,17 @@
       }
 
       this.getDetail = function(obj) {
+        console.log('getting new details')
+        console.log(obj)
         return $http.get(`${url}/distributors/${obj.id}/items`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.addItem = function(item) {
+        console.log('doing stuff')
+        return $http.post(`${url}/items`, item)
           .then(function(response) {
             return response;
           })

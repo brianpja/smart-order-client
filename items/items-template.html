@@ -5,13 +5,20 @@
 <button>Edit Info</button>
 
 <p>Available Items</p>
-<div class="wrapper" ng-repeat="item in $ctrl.detail">
+<div class="wrapper cf" ng-repeat="item in $ctrl.detail">
   <div class="fl w-50">{{item.item}}</div>
-  <div class="fl w-10">{{item.price}}</div>
+  <div class="fl w-30">{{item.price}}</div>
+  <div class="fl w-20" ng-click="$ctrl.deleteItem(item)">Delete</div>
 </div>
 
-<p>Add new item</p>
-<form>
-  <input placeholder>
-
-<!-- <p>{{$ctrl.detail}}</p> -->
+<div class="wrapper mv3">
+<form ng-submit="$ctrl.addItem($ctrl.newItem)">
+  <p>
+  Add new item:
+    <input placeholder="item name" ng-model="$ctrl.newItem.name"></input>
+    <input placeholder="price" ng-model="$ctrl.newItem.price"></input>
+    <button type="submit">Submit</button>
+  </p>
+</form>
+</div>
+<p>{{$ctrl.detail}}</p>

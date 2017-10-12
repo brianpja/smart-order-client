@@ -5,10 +5,7 @@
     .component('items', {
       controller,
       bindings: {
-        currentOrder: '=',
-        showHome: '=',
-        showCheckout: '=',
-        detail: '='
+        detail: '=',
       },
       templateUrl: "items/items-template.html"
 
@@ -19,9 +16,28 @@
       const vm = this;
 
 
+
       vm.$onInit = function() {
-        console.log('items detail:', vm.detail);
+
       }
 
+      vm.addItem = function(item) {
+        item.distributor_id = vm.detail[0].dist_id;
+
+        orderService.addItem(item)
+          .then(function(response) {
+            console.log(response)
+            const idObj = {id: vm.detail[0].dist_id}
+            vm.refreshList(idObj);
+            delete vm.newItem;
+          })
+      }
+
+      vm.refreshList = function(obj) {
+        orderService.getDetail(obj)
+          .then(function(response) {
+            vm.detail = response.data;
+          })
+      }
     }
 }());

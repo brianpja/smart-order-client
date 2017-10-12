@@ -55,6 +55,7 @@
       }
 
       vm.getDetail = function(dist) {
+        console.log('getting details')
         orderService.getDetail(dist)
           .then(function(response) {
             console.log(response);
