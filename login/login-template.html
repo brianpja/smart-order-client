@@ -1,9 +1,9 @@
 <h1>Login</h1>
 
 <div class="wrapper">
-  <form ng-submit="$ctrl.login()">
-    <div><input placeholder="Email"></input></div>
-    <div><input placeholder="Password"></input></div>
-    <div><button type="submit">Login</button></div>
+  <form name="login" ng-submit="$ctrl.login($ctrl.userLogin)">
+    <div><input placeholder="Email" ng-model="$ctrl.userLogin.email" required autofocus></input></div>
+    <div><input placeholder="Password" ng-model="$ctrl.userLogin.password" required></input></div>
+    <div><button type="submit" ng-disabled="login.$invalid">Login</button></div>
   </form>
 </div>

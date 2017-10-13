@@ -22,5 +22,12 @@
 
       }
 
+      vm.login = function(user) {
+        orderService.login(user)
+          .then(function(response) {
+            console.log(response)
+          })
+      }
+
     }
 }());

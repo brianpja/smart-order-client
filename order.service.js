@@ -90,5 +90,12 @@
           })
       }
 
+      this.login = function(obj) {
+        return $http.post(`${url}/token`, obj)
+          .then(function(response) {
+            return response;
+          })
+      }
+
     }
 }());
