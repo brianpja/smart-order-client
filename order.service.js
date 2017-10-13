@@ -49,8 +49,6 @@
       }
 
       this.getDetail = function(obj) {
-        console.log('getting new details')
-        console.log(obj)
         return $http.get(`${url}/distributors/${obj.id}/items`)
           .then(function(response) {
             return response;
@@ -58,7 +56,6 @@
       }
 
       this.addItem = function(item) {
-        console.log('doing stuff')
         return $http.post(`${url}/items`, item)
           .then(function(response) {
             return response;
@@ -81,6 +78,13 @@
 
       this.updateDist = function(obj) {
         return $http.patch(`${url}/distributors/${obj.id}`, obj)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.createUser = function(obj) {
+        return $http.post(`${url}/users`, obj)
           .then(function(response) {
             return response;
           })

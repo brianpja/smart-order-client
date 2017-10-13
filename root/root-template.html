@@ -9,6 +9,8 @@
       <h3><a ng-click="$ctrl.goCheckout()">Checkout ({{ $ctrl.currentOrder.length }})</a></h3>
       <h3><a ng-click="$ctrl.goDist()">Distributors</a></h3>
       <h3><a ng-click="$ctrl.goOrders()">Order Log</a></h3>
+      <h3><a ng-click="$ctrl.goLogin()">Login</a></h3>
+      <h3><a ng-click="$ctrl.goRegis()">Regis</a></h3>
     </nav>
     <home
     ng-if="$ctrl.showHome"
@@ -27,6 +29,12 @@
     ng-if="$ctrl.showOrders"
     class="wide"
     current-order="$ctrl.currentOrder"></orders>
+    <login
+    ng-if="$ctrl.showLogin"
+    class="wide"></login>
+    <regis
+    ng-if="$ctrl.showRegis"
+    class="wide"></regis>
 
   </main>
 </div>

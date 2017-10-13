@@ -1,0 +1,11 @@
+<h1>Create New Account</h1>
+
+<div class="wrapper">
+  <form name="registration" ng-submit="$ctrl.createUser($ctrl.newUser)">
+    <div><input placeholder="Your Name" ng-model="$ctrl.newUser.name" required autofocus></input></div>
+    <div><input placeholder="Company" ng-model="$ctrl.newUser.company" required></input></div>
+    <div><input placeholder="Email" ng-model="$ctrl.newUser.email" required></input></div>
+    <div><input placeholder="Password" ng-model="$ctrl.newUser.password" required></input></div>
+    <div><button type="submit" ng-disabled="registration.$invalid">Create Account</button></div>
+  </form>
+</div>

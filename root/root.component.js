@@ -21,6 +21,8 @@
         vm.showDist = false;
         vm.showOrders = false;
         vm.showDetail = false;
+        vm.showLogin = false;
+        vm.showRegis = false;
       }
 
       vm.goHome = function() {
@@ -29,6 +31,8 @@
         vm.showDist = false;
         vm.showOrders = false;
         vm.showDetail = false;
+        vm.showLogin = false;
+        vm.showRegis = false;
       }
 
       vm.goCheckout = function() {
@@ -37,6 +41,8 @@
         vm.showDist = false;
         vm.showOrders = false;
         vm.showDetail = false;
+        vm.showLogin = false;
+        vm.showRegis = false;
       }
 
       vm.goDist = function() {
@@ -45,6 +51,8 @@
         vm.showDist = true;
         vm.showOrders = false;
         vm.showDetail = false;
+        vm.showLogin = false;
+        vm.showRegis = false;
       }
 
       vm.goOrders = function() {
@@ -53,6 +61,28 @@
         vm.showDist = false;
         vm.showOrders = true;
         vm.showDetail = false;
+        vm.showLogin = false;
+        vm.showRegis = false;
+      }
+
+      vm.goLogin = function() {
+        vm.showHome = false;
+        vm.showCheckout = false;
+        vm.showDist = false;
+        vm.showOrders = false;
+        vm.showDetail = false;
+        vm.showLogin = true;
+        vm.showRegis = false;
+      }
+
+      vm.goRegis = function() {
+        vm.showHome = false;
+        vm.showCheckout = false;
+        vm.showDist = false;
+        vm.showOrders = false;
+        vm.showDetail = false;
+        vm.showLogin = false;
+        vm.showRegis = true;
       }
 
     }
