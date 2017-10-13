@@ -41,8 +41,8 @@
           })
       }
 
-      this.deleteDist = function(id) {
-        return $http.delete(`${url}/distributors/${id}`)
+      this.deleteDist = function(obj) {
+        return $http.delete(`${url}/distributors/${obj.id}`, obj)
           .then(function(response) {
             return response;
           })

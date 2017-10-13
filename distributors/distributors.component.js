@@ -41,7 +41,7 @@
       }
 
       vm.deleteDist = function(dist) {
-        orderService.deleteDist(dist.id)
+        orderService.deleteDist(dist)
           .then(function(response) {
             console.log(response)
             vm.getDistributors();
