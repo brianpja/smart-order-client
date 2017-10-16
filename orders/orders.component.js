@@ -24,7 +24,6 @@
       }
 
       vm.getTotal = function(obj) {
-        console.log(obj)
         let total = 0;
         if (obj.items){
 
@@ -39,6 +38,7 @@
         orderService.getOrders(userObj)
           .then(function(response) {
             vm.dataToRender = vm.createBigArray(response.data)
+            console.log(vm.dataToRender)
           })
       }
 
@@ -79,7 +79,10 @@
             orderObj.items.push(itemObj);
           }
         }
-        retArr.push(orderObj);
+        if (orderObj.order_id) {
+          retArr.push(orderObj);
+
+        }
         return retArr;
       }
 

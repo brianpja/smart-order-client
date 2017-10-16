@@ -1,7 +1,7 @@
 <h1>Previous Orders</h1>
 
-
-
+<p ng-if="$ctrl.dataToRender.length === 0">You have no previous orders</p>
+<div ng-if="$ctrl.dataToRender.length > 0">
 <div class="wrapper" ng-repeat="order in $ctrl.dataToRender | orderBy : created_at : true">
   <p>
     <h3>{{order.created_at | date:'medium'}}</h3>
@@ -28,4 +28,5 @@
     </div>
     <button ng-click="$ctrl.repeatOrder(order)">Repeat Order</button>
   </p>
+</div>
 </div>

@@ -14,12 +14,11 @@
 
       vm.items = [];
       vm.currentOrder = [];
-      vm.userData = {
-        loggedIn: false,
-        id: null
-      }
 
       vm.$onInit = function() {
+        vm.userData = {
+          loggedIn: false,
+        }
         vm.showHome = true;
         vm.showCheckout = false;
         vm.showDist = false;
@@ -105,6 +104,7 @@
       vm.isLoggedIn = function() {
         return orderService.isLoggedIn()
           .then(function(response) {
+            console.log(response)
             vm.userData = response.data;
             return vm.userData;
           })

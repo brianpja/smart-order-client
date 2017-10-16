@@ -14,7 +14,7 @@
       <h3><a ng-click="$ctrl.logout()" ng-if="$ctrl.userData.loggedIn">Logout</a></h3>
     </nav>
     <home
-    ng-if="$ctrl.showHome"
+    ng-if="$ctrl.showHome && $ctrl.userData.loggedIn"
     class="wide"
     current-order="$ctrl.currentOrder"
     user-data="$ctrl.userData"></home>

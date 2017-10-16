@@ -34,8 +34,11 @@
 
       vm.addDist = function() {
         vm.newDist.user_id = vm.userData.id;
+        console.log('userData:', vm.userData)
+        console.log('newDist: ', vm.newDist)
         orderService.addDist(vm.newDist)
           .then(function(response) {
+            console.log(response)
             vm.getDistributors(vm.userData);
             delete vm.newDist;
           })
