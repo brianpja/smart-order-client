@@ -6,7 +6,8 @@
       controller,
       bindings: {
         detail: '=',
-        distributor: '='
+        distributor: '=',
+        userData: '='
       },
       templateUrl: "items/items-template.html"
 
@@ -23,6 +24,7 @@
 
       vm.addItem = function(item) {
         item.distributor_id = vm.distributor.id;
+        item.user_id = vm.userData.id;
 
         orderService.addItem(item)
           .then(function(response) {

@@ -1,40 +1,52 @@
 <div class="container">
-  <nav class="bg-silver header">
-    <h1>Smart Order</h1>
+  <nav class="bg-blue header">
+    <h1 class="white">Smart Order</h1>
   </nav>
 
   <main>
     <nav class="bg-moon-gray sidebar">
-      <h3><a ng-click="$ctrl.goHome()">Home</a></h3>
-      <h3><a ng-click="$ctrl.goCheckout()">Checkout ({{ $ctrl.currentOrder.length }})</a></h3>
-      <h3><a ng-click="$ctrl.goDist()">Distributors</a></h3>
-      <h3><a ng-click="$ctrl.goOrders()">Order Log</a></h3>
-      <h3><a ng-click="$ctrl.goLogin()">Login</a></h3>
-      <h3><a ng-click="$ctrl.goRegis()">Regis</a></h3>
+      <h3><a ng-click="$ctrl.goHome()" ng-if="$ctrl.userData.loggedIn">Home</a></h3>
+      <h3><a ng-click="$ctrl.goCheckout()" ng-if="$ctrl.userData.loggedIn">Checkout ({{ $ctrl.currentOrder.length }})</a></h3>
+      <h3><a ng-click="$ctrl.goDist()" ng-if="$ctrl.userData.loggedIn">Distributors</a></h3>
+      <h3><a ng-click="$ctrl.goOrders()" ng-if="$ctrl.userData.loggedIn">Order Log</a></h3>
+      <h3><a ng-click="$ctrl.goLogin()" ng-if="!$ctrl.userData.loggedIn">Login</a></h3>
+      <h3><a ng-click="$ctrl.goRegis()" ng-if="!$ctrl.userData.loggedIn">Registration</a></h3>
+      <h3><a ng-click="$ctrl.logout()" ng-if="$ctrl.userData.loggedIn">Logout</a></h3>
     </nav>
     <home
     ng-if="$ctrl.showHome"
     class="wide"
-    current-order="$ctrl.currentOrder"></home>
+    current-order="$ctrl.currentOrder"
+    user-data="$ctrl.userData"></home>
     <checkout
     ng-if="$ctrl.showCheckout"
     class="wide"
-    current-order="$ctrl.currentOrder"></checkout>
+    current-order="$ctrl.currentOrder"
+    user-data="$ctrl.userData"></checkout>
     <distributors
     ng-if="$ctrl.showDist"
     class="wide"
     current-order="$ctrl.currentOrder"
-    show-detail="$ctrl.showDetail"></distributors>
+    show-detail="$ctrl.showDetail"
+    user-data="$ctrl.userData"></distributors>
     <orders
     ng-if="$ctrl.showOrders"
     class="wide"
-    current-order="$ctrl.currentOrder"></orders>
+    current-order="$ctrl.currentOrder"
+    user-data="$ctrl.userData"></orders>
     <login
     ng-if="$ctrl.showLogin"
-    class="wide"></login>
+    class="wide"
+    logged-in="$ctrl.loggedIn"
+    show-home="$ctrl.showHome"
+    show-login="$ctrl.showLogin"
+    user-data="$ctrl.userData"></login>
     <regis
     ng-if="$ctrl.showRegis"
-    class="wide"></regis>
+    class="wide"
+    show-regis="$ctrl.showRegis"
+    show-home="$ctrl.showHome"
+    user-data="$ctrl.userData"></regis>
 
   </main>
 </div>

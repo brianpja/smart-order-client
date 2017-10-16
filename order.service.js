@@ -20,16 +20,19 @@
           })
       }
 
-      this.getItems = function() {
-        return $http.get(`${url}/items`)
+      this.getItems = function(obj) {
+
+        return $http.get(`${url}/users/${obj.id}/items`)
           .then(function(response) {
             return response;
           })
       }
 
-      this.getDist = function() {
-        return $http.get(`${url}/distributors`)
+      this.getDist = function(obj) {
+        console.log('object', obj)
+        return $http.get(`${url}/users/${obj.id}/distributors`)
           .then(function(response) {
+            console.log(response)
             return response;
           })
       }
@@ -69,8 +72,8 @@
           })
       }
 
-      this.getOrders = function() {
-        return $http.get(`${url}/orders`)
+      this.getOrders = function(obj) {
+        return $http.get(`${url}/users/${obj.id}/orders`)
           .then(function(response) {
             return response;
           })
@@ -92,6 +95,27 @@
 
       this.login = function(obj) {
         return $http.post(`${url}/token`, obj)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.isLoggedIn = function() {
+        return $http.get(`${url}/token`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.logout = function() {
+        return $http.delete(`${url}/token`)
+          .then(function(response) {
+            return response;
+          })
+      }
+
+      this.getUserData = function(id) {
+        return $http.get(`${url}/users/${id}`)
           .then(function(response) {
             return response;
           })

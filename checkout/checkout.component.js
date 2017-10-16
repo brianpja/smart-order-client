@@ -7,7 +7,8 @@
       bindings: {
         currentOrder: '=',
         showHome: '=',
-        showCheckout: '='
+        showCheckout: '=',
+        userData: '='
       },
       templateUrl: "checkout/checkout-template.html"
 
@@ -37,6 +38,7 @@
       }
 
       vm.submitOrder = function(order) {
+        order.user_id = vm.userData.id;
         orderService.postOrder(order)
           .then((response) => {
             console.log(response);

@@ -1,5 +1,6 @@
 <div class="content bg-white">
   <h1>Available Items</h1>
+  <p ng-if="$ctrl.items.length === 0">Add items by creating distributors and adding items in the details</p>
   <div class="row" ng-repeat="item in $ctrl.items | orderBy: 'name'">
     <div class="fl w-50">{{item.name}}</div>
     <div class="fl w-10">{{item.price}}</div>

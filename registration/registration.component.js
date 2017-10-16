@@ -7,7 +7,8 @@
       bindings: {
         currentOrder: '=',
         showHome: '=',
-        showCheckout: '='
+        userData: '=',
+        showRegis: '='
       },
       templateUrl: "registration/registration-template.html"
 
@@ -26,6 +27,10 @@
         orderService.createUser(user)
           .then(function(response) {
             console.log(response);
+            vm.userData = response.data;
+            vm.userData.loggedIn = true;
+            vm.showHome = true;
+            vm.showRegis = false;
             delete vm.newUser;
           })
       }

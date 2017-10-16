@@ -1,6 +1,7 @@
 <h1>Previous Orders</h1>
 
 
+
 <div class="wrapper" ng-repeat="order in $ctrl.dataToRender | orderBy : created_at : true">
   <p>
     <h3>{{order.created_at | date:'medium'}}</h3>

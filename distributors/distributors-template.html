@@ -2,10 +2,11 @@
 
 <h1>Distributors</h1>
 <div class="wrapper">
-<div class="row" ng-repeat="dist in $ctrl.list | orderBy: 'name'">
-  <div class="fl w-40"><a ng-click="$ctrl.goDetail(dist)">{{dist.name}}</a></div>
+<div class="row" ng-repeat="dist in $ctrl.list | orderBy: 'name' track by $index">
+  <div class="fl w-30"><a ng-click="$ctrl.goDetail(dist)">{{dist.name}}</a></div>
   <div class="fl w-20">{{dist.contact}}</div>
   <div class="fl w-30">{{dist.email}}</div>
+  <button class="fl w-10" ng-click="$ctrl.goDetail(dist)">details</button>
   <button class="fl w-10" ng-click="$ctrl.deleteDist(dist)">delete</button>
 </div>
 
@@ -19,4 +20,7 @@
 </div>
 </div>
 
-<items ng-if="$ctrl.showDetail" detail="$ctrl.detail" distributor="$ctrl.distributor"></items>
+<items ng-if="$ctrl.showDetail"
+  detail="$ctrl.detail"
+  distributor="$ctrl.distributor"
+  user-data="$ctrl.userData"></items>

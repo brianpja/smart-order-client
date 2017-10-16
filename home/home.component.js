@@ -7,7 +7,8 @@
       bindings: {
         currentOrder: '=',
         showHome: '=',
-        showCheckout: '='
+        showCheckout: '=',
+        userData: '=',
       },
       templateUrl: "home/home-template.html"
 
@@ -21,11 +22,12 @@
 
 
       vm.$onInit = function() {
-        vm.getItems();
+        console.log('from home logged in?', vm.userData)
+        vm.getItems(vm.userData);
       }
 
-      vm.getItems = function() {
-        orderService.getItems()
+      vm.getItems = function(userData) {
+        orderService.getItems(userData)
           .then((response) => {
             console.log('coming back')
             vm.items = response.data.map(ele => {
@@ -39,5 +41,7 @@
         console.log(item);
         vm.currentOrder.push(item);
       }
+
+
     }
 }());

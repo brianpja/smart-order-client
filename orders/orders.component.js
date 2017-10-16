@@ -7,7 +7,8 @@
       bindings: {
         currentOrder: '=',
         showHome: '=',
-        showCheckout: '='
+        showCheckout: '=',
+        userData: '='
       },
       templateUrl: "orders/orders-template.html"
 
@@ -17,23 +18,29 @@
     function controller($state, $http, orderService) {
       const vm = this;
 
+
       vm.$onInit = function() {
-        vm.getOrders();
+        vm.getOrders(vm.userData);
       }
 
       vm.getTotal = function(obj) {
+        console.log(obj)
         let total = 0;
-        for (const item of obj.items) {
-          total += item.qty * item.price;
+        if (obj.items){
+
+          for (const item of obj.items) {
+            total += item.qty * item.price;
+          }
         }
         return total;
       }
 
-      vm.getOrders = function() {
-        orderService.getOrders()
+      vm.getOrders = function(userObj) {
+        orderService.getOrders(userObj)
           .then(function(response) {
             console.log(response.data);
             vm.dataToRender = vm.createBigArray(response.data)
+
             console.log(vm.dataToRender);
           })
       }
@@ -43,7 +50,7 @@
       }
 
       vm.createBigArray = function(arr) {
-        const retArr = []
+        const retArr = [];
         let orderObj = {};
 
         for (const obj of arr) {
