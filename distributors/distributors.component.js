@@ -21,26 +21,21 @@
       vm.detail = [];
 
       vm.$onInit = function() {
-        console.log('userData:', vm.userData)
         vm.showDetail = false;
         vm.getDistributors(vm.userData);
       }
 
       vm.getDistributors = function(userData) {
-        console.log('getting distributors')
         orderService.getDist(userData)
           .then(function(response) {
-            console.log(response)
             vm.list = response.data;
           })
       }
 
       vm.addDist = function() {
         vm.newDist.user_id = vm.userData.id;
-        console.log(vm.newDist)
         orderService.addDist(vm.newDist)
           .then(function(response) {
-            console.log(response)
             vm.getDistributors(vm.userData);
             delete vm.newDist;
           })
@@ -49,7 +44,6 @@
       vm.deleteDist = function(dist) {
         orderService.deleteDist(dist)
           .then(function(response) {
-            console.log(response)
             vm.getDistributors(vm.userData);
           })
       }
@@ -61,10 +55,8 @@
       }
 
       vm.getDetail = function(dist) {
-        console.log('getting details')
         orderService.getDetail(dist)
           .then(function(response) {
-            console.log(response);
             vm.detail = response.data;
           })
       }

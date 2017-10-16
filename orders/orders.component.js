@@ -38,10 +38,7 @@
       vm.getOrders = function(userObj) {
         orderService.getOrders(userObj)
           .then(function(response) {
-            console.log(response.data);
             vm.dataToRender = vm.createBigArray(response.data)
-
-            console.log(vm.dataToRender);
           })
       }
 

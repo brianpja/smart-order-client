@@ -26,7 +26,6 @@
       vm.createUser = function(user) {
         orderService.createUser(user)
           .then(function(response) {
-            console.log(response);
             vm.userData = response.data;
             vm.userData.loggedIn = true;
             vm.showHome = true;

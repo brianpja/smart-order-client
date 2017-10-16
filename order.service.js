@@ -7,9 +7,9 @@
     service.$inject = ['$http']
     function service($http) {
 
-      const url = 'http://localhost:8000';
+      // const url = 'http://localhost:8000';
       // git push heroku master
-      // const url = 'https://brianpja-smart-order-server.herokuapp.com';
+      const url = 'https://brianpja-smart-order-server.herokuapp.com';
 
       this.showDetail = false;
 
@@ -29,10 +29,8 @@
       }
 
       this.getDist = function(obj) {
-        console.log('object', obj)
         return $http.get(`${url}/users/${obj.id}/distributors`)
           .then(function(response) {
-            console.log(response)
             return response;
           })
       }

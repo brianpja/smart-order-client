@@ -21,13 +21,11 @@
 
 
       vm.$onInit = function() {
-        console.log('from login userData', vm.userData)
       }
 
       vm.login = function(user) {
         orderService.login(user)
           .then(function(response) {
-            console.log(response)
             vm.userData = response.data;
             vm.userData.loggedIn = true;
             vm.showHome = true;

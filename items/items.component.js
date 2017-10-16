@@ -19,7 +19,6 @@
 
       vm.$onInit = function() {
         vm.form = false;
-        console.log(vm.distributor)
       }
 
       vm.addItem = function(item) {
@@ -28,7 +27,6 @@
 
         orderService.addItem(item)
           .then(function(response) {
-            console.log(response)
             const idObj = {id: vm.distributor.id}
             vm.refreshList(idObj);
             delete vm.newItem;
@@ -45,7 +43,6 @@
       vm.deleteItem = function(item) {
         orderService.deleteItem(item)
           .then(function(response) {
-            console.log(response)
             const idObj = {id: vm.detail[0].dist_id}
             vm.refreshList(idObj);
           })
@@ -59,7 +56,6 @@
       vm.updateDist = function(obj) {
         orderService.updateDist(obj)
           .then(function(response) {
-            console.log(response);
             vm.distributor = response.data;
             vm.showForm();
           })

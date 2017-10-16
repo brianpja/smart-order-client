@@ -30,7 +30,6 @@
 
         vm.isLoggedIn()
           .then((response) => {
-            console.log('response', response)
             if(vm.userData.loggedIn){
               vm.getUserData(vm.userData.id)
             }
@@ -106,7 +105,6 @@
       vm.isLoggedIn = function() {
         return orderService.isLoggedIn()
           .then(function(response) {
-            console.log('from root islogged in function response.data', response.data)
             vm.userData = response.data;
             return vm.userData;
           })
@@ -115,7 +113,6 @@
       vm.logout = function() {
         orderService.logout()
           .then(function(response) {
-            console.log('loggin out')
             vm.userData.loggedIn = false;
             vm.goLogin();
           })
@@ -124,7 +121,6 @@
       vm.getUserData = function(id) {
         orderService.getUserData(id)
           .then(function(response) {
-            console.log(response)
             vm.userData = response.data;
             vm.userData.loggedIn = true;
           })

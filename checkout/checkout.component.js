@@ -34,14 +34,12 @@
 
       vm.removeFromOrder = function(index) {
         vm.currentOrder.splice(index, 1);
-        console.log(vm.currentOrder);
       }
 
       vm.submitOrder = function(order) {
         order.user_id = vm.userData.id;
         orderService.postOrder(order)
           .then((response) => {
-            console.log(response);
             vm.currentOrder = [];
           })
       }
