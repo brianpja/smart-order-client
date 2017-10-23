@@ -104,7 +104,6 @@
       vm.isLoggedIn = function() {
         return orderService.isLoggedIn()
           .then(function(response) {
-            console.log(response)
             vm.userData = response.data;
             return vm.userData;
           })

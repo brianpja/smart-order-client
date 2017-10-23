@@ -22,9 +22,7 @@
 
 
       vm.$onInit = function() {
-        console.log(vm.userData)
         if (vm.userData.loggedIn) {
-
           vm.getItems(vm.userData);
         }
       }
